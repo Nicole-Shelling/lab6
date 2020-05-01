@@ -12,7 +12,7 @@ public:
 	void CreateMinimalBST(int* pBegin, int Begin, int End);
 private:
 	TreeNode root;
-	void Insert1(int value, TreeNode* a);
-	TreeNode* Search1(int value, TreeNode* a);
+	void Insert(int value, TreeNode* a);
+	TreeNode* Search(int value, TreeNode* a);
 };
 

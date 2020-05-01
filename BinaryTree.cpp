@@ -25,15 +25,15 @@ void BinaryTree::Insert(int value)
 {
 	cout << "element  " << value << " path ";
 	if (root.getData() == NULL) root.setData(value);
-	else Insert1(value, &root);	
+	else Insert(value, &root);	
 }
 
 TreeNode* BinaryTree::Search(int value)
 {
-	return Search1(value, &root);
+	return Search(value, &root);
 	
 }
-void BinaryTree::Insert1(int value, TreeNode* current)
+void BinaryTree::Insert(int value, TreeNode* current)
 {			
 			cout << current->getData() << "  ";
 			if (value < current->getData())
@@ -42,7 +42,7 @@ void BinaryTree::Insert1(int value, TreeNode* current)
 				{
 					current->setLeft(value);
 				}
-				else Insert1(value, current->getLeft());
+				else Insert(value, current->getLeft());
 			}
 			else
 			{
@@ -50,17 +50,17 @@ void BinaryTree::Insert1(int value, TreeNode* current)
 				{
 					current->setRight(value);
 				}
-				else Insert1(value, current->getRight());
+				else Insert(value, current->getRight());
 			}
 
 		cout << endl;
 }
-TreeNode* BinaryTree::Search1(int value, TreeNode* current)
+TreeNode* BinaryTree::Search(int value, TreeNode* current)
 {
 	if (current->getData() == value) return current;
 	else if (value < current->getData()) 
-		Search1(value, current->getLeft());
-	else  Search1(value, current->getRight());
+		Search(value, current->getLeft());
+	else  Search(value, current->getRight());
 }
 void BinaryTree::CreateMinimalBST(int* pBegin, int Begin, int End)
 {
